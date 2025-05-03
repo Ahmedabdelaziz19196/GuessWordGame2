@@ -1,0 +1,243 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background-color: #101828;
+    font-family: Arial, Helvetica, sans-serif;
+}
+:focus {
+    border: none;
+}
+h1 {
+    height: 50px;
+    margin: 0 0 10px;
+    color: white;
+    position: absolute;
+    top: 372px;
+    left: 50%;
+    transition: 0.5s;
+    transform: translateX(-50%);
+}
+@media (max-width: 768px) {
+    h1 {
+        width: 100%;
+        text-align: center;
+        top: 240px;
+    }
+}
+.start-game {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+.start-game .tries-inputs {
+    display: flex;
+    gap: 10px;
+    margin: 0 auto;
+    max-width: 502px;
+    justify-content: center;
+}
+
+.start-game .tries-inputs input {
+    padding: 10px;
+    border: none;
+    background-color: #eee;
+    border-radius: 5px;
+    color: black;
+    text-align: center;
+    flex: 1;
+    font-size: 15px;
+}
+
+.start-game .tries-inputs .start {
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #e1482c;
+    color: white;
+    font-weight: bold;
+}
+
+.start-game .key-colors {
+    display: flex;
+    justify-content: center;
+}
+
+.start-game .key-colors .key-color {
+    background-color: transparent;
+    margin: 35px 25px 10px 25px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.start-game .key-colors .key-color .key-text {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.start-game .key-colors .key-color .key {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.start-game .key-colors .key-color .key.in-place {
+    background-color: #0aa78a;
+}
+
+.start-game .key-colors .key-color .key.not-in-place {
+    background-color: #ff9c0b;
+}
+
+.start-game .key-colors .key-color .key.wrong {
+    background-color: red;
+}
+
+.tries-inputs input:focus {
+    outline-color: #ccc;
+}
+@media (max-width: 768px) {
+    .start-game .tries-inputs {
+        justify-content: center;
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .key-colors {
+        display: flex;
+        justify-content: center;
+    }
+
+    .start-game .key-colors .key-color {
+        margin: 13px 12px 0 0;
+    }
+    .start-game .key-colors .key-color .key-text {
+        font-size: 15px;
+    }
+}
+
+.guess-game {
+    text-align: center;
+    margin: 20px auto;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .game-area {
+        .inputs {
+            margin-bottom: 20px;
+            > div {
+                color: white;
+                font-weight: bold;
+                margin: 15px;
+                display: flex;
+                align-items: center;
+                input {
+                    width: 50px;
+                    height: 50px;
+                    margin: 0 4px;
+                    font-size: 53px;
+                    text-align: center;
+                    outline: none;
+                    border: none;
+                    border-radius: 4px;
+                    transition: 0.3s;
+                    &.in-place {
+                        background-color: #0aa78a;
+                        color: white;
+                    }
+                    &.not-in-place {
+                        background-color: #ff9c0b;
+                        color: white;
+                    }
+                    &.wrong {
+                        background-color: red;
+                        color: white;
+                    }
+                }
+                span {
+                    font-weight: bold;
+                    font-size: 25px;
+                    padding-right: 10px;
+                }
+            }
+            .disabled {
+                opacity: 0.5;
+                pointer-events: none;
+            }
+        }
+        .controls {
+            button {
+                color: white;
+                padding: 10px 43px;
+                border: none;
+                font-weight: bold;
+                font-size: larger;
+                border-radius: 4px;
+                cursor: pointer;
+                background-color: #e3492d;
+                margin-bottom: 5px;
+            }
+            .hint {
+                background-color: #06707b;
+            }
+            .hint:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+        }
+        .massage {
+            text-align: center;
+            font-weight: bold;
+            font-size: 28px;
+            span {
+                font-weight: bold;
+                display: block;
+                font-size: 50px;
+                text-transform: capitalize;
+                color: #e1482c;
+                margin-top: 10px;
+            }
+            p {
+                margin: 0;
+                margin-top: 15px;
+            }
+            &.win {
+                color: #0aa78a;
+                margin-bottom: 5px;
+            }
+            &.lose {
+                color: red;
+            }
+        }
+    }
+}
+.guess-game input:focus {
+    border-bottom: 2px solid #000000;
+}
+
+footer {
+    background-color: #262d40;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    footer {
+        font-size: 14px;
+    }
+}
