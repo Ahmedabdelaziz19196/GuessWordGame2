@@ -14,7 +14,7 @@ h1 {
     margin: 0 0 10px;
     color: white;
     position: absolute;
-    top: 372px;
+    top: 35%;
     left: 50%;
     transition: 0.5s;
     transform: translateX(-50%);
